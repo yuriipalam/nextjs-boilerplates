@@ -2,7 +2,7 @@
 
 *Disclaimer: it's just my own view*
 
-This branch has fundamental architecture to start building a robust [Next.js](https://nextjs.org/) app. It's a modular architecture and fits the best for small-medium projects.
+This branch has fundamental architecture to start building a robust [Next.js](https://nextjs.org/) app. It's a modular architecture and fits the best for small-medium projects. The project has a small hello-world like example.
 
 ### Brief explanation:
 - all the source code is stored under the ***src*** directory. 
@@ -14,7 +14,7 @@ This branch has fundamental architecture to start building a robust [Next.js](ht
 - ***entities*** aka models, usually they have types, api calls, etc.
 - ***middleware.ts*** file is required to be in the root, and it does what it says
 
-So ***ui*** is a fundamental part, ***components*** are built of ***ui*** and modules are built of ***components***. Child packages must not know anything about they parent, but parent can and should use anything from its children. In other words, it's a one-directional system.
+So ***ui*** is a fundamental part, ***components*** are built of ***ui*** and modules are built of ***ui*** and ***components***. Child packages must not know anything about they parent, but the parent can and should use anything from its children. In other words, it's a one-directional system.
 
 ***ui*** -> ***components*** -> ***modules***
 
