@@ -21,7 +21,7 @@ const config: Config = {
       colors: {
         border: { DEFAULT: "#e2e8f0", stronger: "#cbd5e1" },
         input: "#e2e8f0",
-        ring: "#2563eb",
+        ring: "#1982FD",
         background: {
           DEFAULT: "#ffffff",
           50: "#f8fafc",
@@ -31,17 +31,17 @@ const config: Config = {
           400: "#94a3b8",
           500: "#64748b",
           600: "#475569",
-          700: "#334155"
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a",
+          950: "#020617"
         },
         foreground: "#030c24",
         primary: {
           DEFAULT: "#1982FD",
           foreground: "#f8fafc",
-          800: "#1e40af",
-          700: "#1d4ed8",
-          500: "#3b82f6",
-          400: "#60a5fa",
-          300: "#93c5fd"
+          lighter: "#00ACFF",
+          light: "#00CCF1"
         },
         secondary: {
           DEFAULT: "#F0F4F7",
@@ -68,11 +68,11 @@ const config: Config = {
         },
         popover: {
           DEFAULT: "#ffffff",
-          foreground: "#020817"
+          foreground: "#030c24"
         },
         card: {
           DEFAULT: "#ffffff",
-          foreground: "#020817"
+          foreground: "#030c24"
         }
       },
       borderRadius: {
