@@ -58,7 +58,13 @@ import {
   TableRow
 } from "@/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from "@/ui/tooltip";
+import { ThemingModeToggle } from "@/components";
 
 export function Dashboard02() {
   return (
@@ -147,6 +153,7 @@ export function Dashboard02() {
               </TooltipTrigger>
               <TooltipContent side="right">Settings</TooltipContent>
             </Tooltip>
+            <ThemingModeToggle />
           </nav>
         </aside>
         <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">

@@ -66,6 +66,7 @@ import {
   TooltipContent,
   TooltipTrigger
 } from "@/ui/tooltip";
+import { ThemingModeToggle } from "@/components";
 
 export function Dashboard() {
   return (
@@ -154,6 +155,7 @@ export function Dashboard() {
               </TooltipTrigger>
               <TooltipContent side="right">Settings</TooltipContent>
             </Tooltip>
+            <ThemingModeToggle />
           </nav>
         </aside>
         <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
@@ -232,11 +234,11 @@ export function Dashboard() {
               </BreadcrumbList>
             </Breadcrumb>
             <div className="relative ml-auto flex-1 md:grow-0">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Search..."
-                className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
+                className="w-full rounded-full bg-background pl-8 md:w-[200px] lg:w-[336px]"
               />
             </div>
             <DropdownMenu>
