@@ -19,38 +19,60 @@ const config: Config = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: { DEFAULT: "#e2e8f0", stronger: "#cbd5e1" },
+        input: "#e2e8f0",
+        ring: "#2563eb",
+        background: {
+          DEFAULT: "#ffffff",
+          50: "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155"
+        },
+        foreground: "#030c24",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))"
+          DEFAULT: "#1982FD",
+          foreground: "#f8fafc",
+          800: "#1e40af",
+          700: "#1d4ed8",
+          500: "#3b82f6",
+          400: "#60a5fa",
+          300: "#93c5fd"
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))"
+          DEFAULT: "#F0F4F7",
+          foreground: "#0f172a",
+          stronger: "#E6EDF2",
+          strong: "#DFE6EB"
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))"
+          DEFAULT: "#ef4444",
+          foreground: "#f8fafc"
+        },
+        success: {
+          DEFAULT: "#16cc53",
+          foreground: "#f8fafc"
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))"
+          DEFAULT: "#f1f5f9",
+          foreground: "#64748b"
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))"
+          DEFAULT: "#EDF1F5",
+          foreground: "#0f172a",
+          stronger: "#E6EAED"
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))"
+          DEFAULT: "#ffffff",
+          foreground: "#020817"
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))"
+          DEFAULT: "#ffffff",
+          foreground: "#020817"
         }
       },
       borderRadius: {

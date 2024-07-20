@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
+import { ThemeProvider } from "@/lib/providers";
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: "Architecture Skeleton Next App",
@@ -12,9 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="font-poppins">
-        <main>{children}</main>
+    <html lang="en" className={GeistSans.className}>
+      <body className="bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
