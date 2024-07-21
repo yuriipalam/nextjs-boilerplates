@@ -1,7 +1,26 @@
 import type { Config } from "tailwindcss";
+import { colors } from "./colors";
+
+function hexToRgb(hex: string): string {
+  hex = hex.replace(/^#/, "");
+
+  if (hex.length === 3) {
+    hex = hex
+      .split("")
+      .map((char) => char + char)
+      .join("");
+  }
+
+  const int = parseInt(hex, 16);
+  const r = (int >> 16) & 255;
+  const g = (int >> 8) & 255;
+  const b = int & 255;
+
+  return `${r}, ${g}, ${b}`;
+}
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,70 +29,71 @@ const config: Config = {
     "./src/modules/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px"
-      }
-    },
     extend: {
       colors: {
-        border: { DEFAULT: "#e2e8f0", stronger: "#cbd5e1" },
-        input: "#e2e8f0",
-        ring: "#1982FD",
         background: {
-          DEFAULT: "#ffffff",
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#64748b",
-          600: "#475569",
-          700: "#334155",
-          800: "#1e293b",
-          900: "#0f172a",
-          950: "#020617"
+          DEFAULT: "rgba(var(--background), <alpha-value>)",
+          50: "rgba(var(--background-50), <alpha-value>)",
+          100: "rgba(var(--background-100), <alpha-value>)",
+          200: "rgba(var(--background-200), <alpha-value>)",
+          300: "rgba(var(--background-300), <alpha-value>)",
+          400: "rgba(var(--background-400), <alpha-value>)",
+          500: "rgba(var(--background-500), <alpha-value>)",
+          600: "rgba(var(--background-600), <alpha-value>)",
+          700: "rgba(var(--background-700), <alpha-value>)",
+          800: "rgba(var(--background-800), <alpha-value>)",
+          900: "rgba(var(--background-900), <alpha-value>)",
+          950: "rgba(var(--background-950), <alpha-value>)"
         },
-        foreground: "#030c24",
-        primary: {
-          DEFAULT: "#1982FD",
-          foreground: "#f8fafc",
-          lighter: "#00ACFF",
-          light: "#00CCF1"
-        },
-        secondary: {
-          DEFAULT: "#F0F4F7",
-          foreground: "#0f172a",
-          stronger: "#E6EDF2",
-          strong: "#DFE6EB"
-        },
-        destructive: {
-          DEFAULT: "#ef4444",
-          foreground: "#f8fafc"
-        },
-        success: {
-          DEFAULT: "#16cc53",
-          foreground: "#f8fafc"
-        },
-        muted: {
-          DEFAULT: "#f1f5f9",
-          foreground: "#64748b"
-        },
-        accent: {
-          DEFAULT: "#EDF1F5",
-          foreground: "#0f172a",
-          stronger: "#E6EAED"
+        foreground: "rgba(var(--foreground), <alpha-value>)",
+        card: {
+          DEFAULT: "rgba(var(--card), <alpha-value>)",
+          foreground: "rgba(var(--card-foreground), <alpha-value>)"
         },
         popover: {
-          DEFAULT: "#ffffff",
-          foreground: "#030c24"
+          DEFAULT: "rgba(var(--popover), <alpha-value>)",
+          foreground: "rgba(var(--popover-foreground), <alpha-value>)"
         },
-        card: {
-          DEFAULT: "#ffffff",
-          foreground: "#030c24"
-        }
+        primary: {
+          DEFAULT: "rgba(var(--primary), <alpha-value>)",
+          foreground: "rgba(var(--primary-foreground), <alpha-value>)",
+          lighter: "rgba(var(--primary-lighter), <alpha-value>)",
+          light: "rgba(var(--primary-light), <alpha-value>)"
+        },
+        secondary: {
+          DEFAULT: "rgba(var(--secondary), <alpha-value>)",
+          foreground: "rgba(var(--secondary-foreground), <alpha-value>)",
+          stronger: "rgba(var(--secondary-stronger), <alpha-value>)",
+          strong: "rgba(var(--secondary-strong), <alpha-value>)"
+        },
+        muted: {
+          DEFAULT: "rgba(var(--muted), <alpha-value>)",
+          foreground: "rgba(var(--muted-foreground), <alpha-value>)"
+        },
+        accent: {
+          DEFAULT: "rgba(var(--accent), <alpha-value>)",
+          foreground: "rgba(var(--accent-foreground), <alpha-value>)",
+          stronger: "rgba(var(--accent-stronger), <alpha-value>)"
+        },
+        success: {
+          DEFAULT: "rgba(var(--success), <alpha-value>)",
+          foreground: "rgba(var(--success-foreground), <alpha-value>)"
+        },
+        destructive: {
+          DEFAULT: "rgba(var(--destructive), <alpha-value>)",
+          foreground: "rgba(var(--destructive-foreground), <alpha-value>)"
+        },
+        border: {
+          DEFAULT: "rgba(var(--border), <alpha-value>)",
+          stronger: "rgba(var(--border-stronger), <alpha-value>)"
+        },
+        input: "rgba(var(--input), <alpha-value>)",
+        ring: "rgba(var(--ring), <alpha-value>)",
+        chart1: "rgba(var(--chart-1), <alpha-value>)",
+        chart2: "rgba(var(--chart-2), <alpha-value>)",
+        chart3: "rgba(var(--chart-3), <alpha-value>)",
+        chart4: "rgba(var(--chart-4), <alpha-value>)",
+        chart5: "rgba(var(--chart-5), <alpha-value>)"
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -96,7 +116,42 @@ const config: Config = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")]
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addBase, theme }) {
+      addBase(
+        Object.fromEntries(
+          [":root", ".dark"].map((theme) => {
+            const themeVariable = theme === ":root" ? "light" : "dark";
+            return [
+              theme,
+              Object.fromEntries(
+                Object.entries(colors[themeVariable]).flatMap(
+                  ([key, value]) => {
+                    if (typeof value === "object") {
+                      return Object.entries(value).map(
+                        ([keyNested, valueNested]) => {
+                          if (keyNested === "DEFAULT") {
+                            return [`--${key}`, hexToRgb(valueNested)];
+                          }
+                          return [
+                            `--${key}-${keyNested}`,
+                            hexToRgb(valueNested)
+                          ];
+                        }
+                      );
+                    } else {
+                      return [[`--${key}`, hexToRgb(value)]];
+                    }
+                  }
+                )
+              )
+            ];
+          })
+        )
+      );
+    }
+  ]
 };
 
 export default config;
