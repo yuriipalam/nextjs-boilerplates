@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
+      <body className="bg-background">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <main>{children}</main>
         </ThemeProvider>

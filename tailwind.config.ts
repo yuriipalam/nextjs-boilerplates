@@ -30,71 +30,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: {
-          DEFAULT: "rgba(var(--background), <alpha-value>)",
-          50: "rgba(var(--background-50), <alpha-value>)",
-          100: "rgba(var(--background-100), <alpha-value>)",
-          200: "rgba(var(--background-200), <alpha-value>)",
-          300: "rgba(var(--background-300), <alpha-value>)",
-          400: "rgba(var(--background-400), <alpha-value>)",
-          500: "rgba(var(--background-500), <alpha-value>)",
-          600: "rgba(var(--background-600), <alpha-value>)",
-          700: "rgba(var(--background-700), <alpha-value>)",
-          800: "rgba(var(--background-800), <alpha-value>)",
-          900: "rgba(var(--background-900), <alpha-value>)",
-          950: "rgba(var(--background-950), <alpha-value>)"
-        },
-        foreground: "rgba(var(--foreground), <alpha-value>)",
-        card: {
-          DEFAULT: "rgba(var(--card), <alpha-value>)",
-          foreground: "rgba(var(--card-foreground), <alpha-value>)"
-        },
-        popover: {
-          DEFAULT: "rgba(var(--popover), <alpha-value>)",
-          foreground: "rgba(var(--popover-foreground), <alpha-value>)"
-        },
-        primary: {
-          DEFAULT: "rgba(var(--primary), <alpha-value>)",
-          foreground: "rgba(var(--primary-foreground), <alpha-value>)",
-          lighter: "rgba(var(--primary-lighter), <alpha-value>)",
-          light: "rgba(var(--primary-light), <alpha-value>)"
-        },
-        secondary: {
-          DEFAULT: "rgba(var(--secondary), <alpha-value>)",
-          foreground: "rgba(var(--secondary-foreground), <alpha-value>)",
-          stronger: "rgba(var(--secondary-stronger), <alpha-value>)",
-          strong: "rgba(var(--secondary-strong), <alpha-value>)"
-        },
-        muted: {
-          DEFAULT: "rgba(var(--muted), <alpha-value>)",
-          foreground: "rgba(var(--muted-foreground), <alpha-value>)"
-        },
-        accent: {
-          DEFAULT: "rgba(var(--accent), <alpha-value>)",
-          foreground: "rgba(var(--accent-foreground), <alpha-value>)",
-          stronger: "rgba(var(--accent-stronger), <alpha-value>)"
-        },
-        success: {
-          DEFAULT: "rgba(var(--success), <alpha-value>)",
-          foreground: "rgba(var(--success-foreground), <alpha-value>)"
-        },
-        destructive: {
-          DEFAULT: "rgba(var(--destructive), <alpha-value>)",
-          foreground: "rgba(var(--destructive-foreground), <alpha-value>)"
-        },
-        border: {
-          DEFAULT: "rgba(var(--border), <alpha-value>)",
-          stronger: "rgba(var(--border-stronger), <alpha-value>)"
-        },
-        input: "rgba(var(--input), <alpha-value>)",
-        ring: "rgba(var(--ring), <alpha-value>)",
-        chart1: "rgba(var(--chart-1), <alpha-value>)",
-        chart2: "rgba(var(--chart-2), <alpha-value>)",
-        chart3: "rgba(var(--chart-3), <alpha-value>)",
-        chart4: "rgba(var(--chart-4), <alpha-value>)",
-        chart5: "rgba(var(--chart-5), <alpha-value>)"
-      },
+      colors: Object.fromEntries(
+        Object.entries(colors.light).map(([key, value]) => {
+          if (typeof value === "object") {
+            return [
+              key,
+              Object.fromEntries(
+                Object.entries(value).map(([keyNested]) => {
+                  if (keyNested === "DEFAULT") {
+                    return [keyNested, `rgba(var(--${key}), <alpha-value>)`];
+                  }
+                  return [
+                    keyNested,
+                    `rgba(var(--${key}-${keyNested}), <alpha-value>)`
+                  ];
+                })
+              )
+            ];
+          } else {
+            return [key, `rgba(var(--${key}), <alpha-value>)`];
+          }
+        })
+      ),
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -83,7 +83,7 @@ export function Dashboard02() {
               <TooltipTrigger asChild>
                 <Link
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground md:h-8 md:w-8"
                 >
                   <Home className="h-5 w-5" />
                   <span className="sr-only">Dashboard</span>
@@ -95,7 +95,7 @@ export function Dashboard02() {
               <TooltipTrigger asChild>
                 <Link
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors duration-200 ease-in-out hover:text-foreground md:h-8 md:w-8"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   <span className="sr-only">Orders</span>
@@ -107,7 +107,7 @@ export function Dashboard02() {
               <TooltipTrigger asChild>
                 <Link
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground md:h-8 md:w-8"
                 >
                   <Package className="h-5 w-5" />
                   <span className="sr-only">Products</span>
@@ -119,7 +119,7 @@ export function Dashboard02() {
               <TooltipTrigger asChild>
                 <Link
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground md:h-8 md:w-8"
                 >
                   <Users2 className="h-5 w-5" />
                   <span className="sr-only">Customers</span>
@@ -131,7 +131,7 @@ export function Dashboard02() {
               <TooltipTrigger asChild>
                 <Link
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground md:h-8 md:w-8"
                 >
                   <LineChart className="h-5 w-5" />
                   <span className="sr-only">Analytics</span>
@@ -145,7 +145,7 @@ export function Dashboard02() {
               <TooltipTrigger asChild>
                 <Link
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-200 ease-in-out hover:text-foreground md:h-8 md:w-8"
                 >
                   <Settings className="h-5 w-5" />
                   <span className="sr-only">Settings</span>
@@ -232,11 +232,11 @@ export function Dashboard02() {
               </BreadcrumbList>
             </Breadcrumb>
             <div className="relative ml-auto flex-1 md:grow-0">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Search..."
-                className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
+                className="w-full rounded-full bg-background pl-8 md:w-[200px] lg:w-[336px]"
               />
             </div>
             <DropdownMenu>
@@ -705,7 +705,7 @@ export function Dashboard02() {
                         <Button
                           size="icon"
                           variant="outline"
-                          className="h-6 w-6"
+                          className="h-6 w-6 rounded-full"
                         >
                           <ChevronLeft className="h-3.5 w-3.5" />
                           <span className="sr-only">Previous Order</span>
@@ -715,7 +715,7 @@ export function Dashboard02() {
                         <Button
                           size="icon"
                           variant="outline"
-                          className="h-6 w-6"
+                          className="h-6 w-6 rounded-full"
                         >
                           <ChevronRight className="h-3.5 w-3.5" />
                           <span className="sr-only">Next Order</span>

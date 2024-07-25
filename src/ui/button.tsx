@@ -5,21 +5,21 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-normal transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-normal transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
           "bg-primary text-primary-foreground hover:bg-primary/90 focus:bg-primary/80",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus:bg-destructive/80",
-        outline:
-          "border border-border bg-background hover:text-accent-foreground hover:bg-background-50 focus:bg-background-100",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary-stronger focus:bg-secondary-strong",
+          "bg-secondary text-secondary-foreground hover:bg-secondary-darker focus:bg-secondary-dark",
+        outline:
+          "border border-border bg-background text-foreground hover:border-border-darker hover:bg-background-darker focus:border-border-darker focus:bg-background-dark",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground focus:bg-accent-stronger",
-        link: "text-primary underline-offset-4 hover:underline"
+          "hover:bg-accent hover:text-accent-foreground focus:bg-accent-darker",
+        link: "text-primary underline-offset-4 hover:underline",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus:bg-destructive/80"
       },
       size: {
         default: "h-10 px-4 py-2",
