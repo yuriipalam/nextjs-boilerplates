@@ -16,8 +16,16 @@ import {
   Upload,
   Users2
 } from "lucide-react";
-
-import { Badge, Button, Input, Label } from "@/ui";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from "@/ui/drawer";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -67,8 +75,24 @@ import {
   TooltipTrigger
 } from "@/ui/tooltip";
 import { ThemingModeToggle } from "@/components";
+import { useToast } from "@/ui/use-toast";
+import { ToastAction } from "@/ui/toast";
+import { Button } from "@/ui/button";
+import { Input } from "@/ui/input";
+import { Badge } from "@/ui/badge";
+import { Label } from "@/ui/label";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger
+} from "@/ui/navigation-menu";
 
 export function Dashboard() {
+  const { toast } = useToast();
+
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <TooltipProvider>
@@ -511,6 +535,56 @@ export function Dashboard() {
                         <Button variant="secondary">Secondary</Button>
                         <Button variant="link">Link</Button>
                         <Button variant="ghost">Ghost</Button>
+                        <Button
+                          variant="outline"
+                          onClick={() => {
+                            toast({
+                              title: "Scheduled: Catch up ",
+                              description:
+                                "Friday, February 10, 2023 at 5:57 PM",
+                              action: (
+                                <ToastAction altText="Goto schedule to undo">
+                                  Undo
+                                </ToastAction>
+                              )
+                            });
+                          }}
+                        >
+                          Add to calendar
+                        </Button>
+                        <Drawer>
+                          <DrawerTrigger asChild>
+                            <Button variant="secondary">Open Drawer</Button>
+                          </DrawerTrigger>
+                          <DrawerContent>
+                            <DrawerHeader>
+                              <DrawerTitle>
+                                Are you absolutely sure?
+                              </DrawerTitle>
+                              <DrawerDescription>
+                                This action cannot be undone.
+                              </DrawerDescription>
+                            </DrawerHeader>
+                            <DrawerFooter>
+                              <Button>Submit</Button>
+                              <DrawerClose asChild>
+                                <Button variant="outline">Cancel</Button>
+                              </DrawerClose>
+                            </DrawerFooter>
+                          </DrawerContent>
+                        </Drawer>
+                        <NavigationMenu>
+                          <NavigationMenuList>
+                            <NavigationMenuItem>
+                              <NavigationMenuTrigger>
+                                Item One
+                              </NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                <NavigationMenuLink>Link</NavigationMenuLink>
+                              </NavigationMenuContent>
+                            </NavigationMenuItem>
+                          </NavigationMenuList>
+                        </NavigationMenu>
                       </div>
                     </CardContent>
                   </Card>

@@ -20,7 +20,6 @@ import {
   Users2
 } from "lucide-react";
 
-import { Badge } from "@/ui";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -47,7 +46,6 @@ import {
   DropdownMenuTrigger
 } from "@/ui/dropdown-menu";
 import { Pagination, PaginationContent, PaginationItem } from "@/ui/pagination";
-import { Progress, Separator, Input, Button } from "@/ui";
 import { Sheet, SheetContent, SheetTrigger } from "@/ui/sheet";
 import {
   Table,
@@ -65,6 +63,11 @@ import {
   TooltipTrigger
 } from "@/ui/tooltip";
 import { ThemingModeToggle } from "@/components";
+import { Button } from "@/ui/button";
+import { Input } from "@/ui/input";
+import { Badge } from "@/ui/badge";
+import { Progress } from "@/ui/progress";
+import { Separator } from "@/ui/separator";
 
 export function Dashboard02() {
   return (

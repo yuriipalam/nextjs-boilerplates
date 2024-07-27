@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { ThemeProvider } from "@/lib/providers";
 import { GeistSans } from "geist/font/sans";
+import { Toaster } from "@/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Architecture Skeleton Next App",
@@ -15,9 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-background">
+      <body className="bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <main>{children}</main>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

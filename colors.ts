@@ -3,9 +3,11 @@ const colors = {
     background: {
       DEFAULT: "#ffffff",
       darker: "#f8fafc",
-      dark: "#f1f5f9"
+      dark: "#f1f5f9",
+      dark2: "#e2e8f0",
+      dark3: "#cbd5e1"
     },
-    foreground: { DEFAULT: "#2b2b2b" },
+    foreground: { DEFAULT: "#1e293b", lighter: "#334155", light: "#475569" },
     primary: {
       DEFAULT: "#1982FD",
       foreground: "#f8fafc",
@@ -13,10 +15,10 @@ const colors = {
       light: "#00CCF1"
     },
     secondary: {
-      DEFAULT: "#f8fafc",
-      foreground: "#1e293b",
-      darker: "#f1f5f9",
-      dark: "#e2e8f0"
+      DEFAULT: "#bde0fe",
+      foreground: "#296ca6",
+      darker: "#C9E5FE",
+      dark: "#D5EBFE"
     },
     input: "#334155",
     border: { DEFAULT: "#e2e8f0", darker: "#cbd5e1" },
