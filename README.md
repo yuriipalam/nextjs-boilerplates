@@ -1,8 +1,8 @@
 ## ✨ Enhanced shadcn/ui
  
-*This branch has fundamental architecture from [architecture-skeleton branch](https://github.com/yuriipalam/nextjs-boilerplates/tree/architecture-skeleton)*
-
 Enhanced [shadcn/ui](https://ui.shadcn.com/) according to *my own vision.*
+
+*This branch has fundamental architecture from [architecture-skeleton branch](https://github.com/yuriipalam/nextjs-boilerplates/tree/architecture-skeleton)*
 
 ### What's the problem with the original lib?
 - Too contrast, which leads from having poor colors palette
