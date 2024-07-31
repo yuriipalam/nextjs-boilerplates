@@ -9,20 +9,20 @@ const colors = {
     },
     foreground: { DEFAULT: "#1e293b", lighter: "#334155", light: "#475569" },
     primary: {
-      DEFAULT: "#1982FD",
+      DEFAULT: "#1982fd",
       foreground: "#f8fafc",
-      lighter: "#00ACFF",
-      light: "#00CCF1"
+      lighter: "#00acff",
+      light: "#00ccf1"
     },
     secondary: {
       DEFAULT: "#bde0fe",
       foreground: "#296ca6",
-      darker: "#C9E5FE",
-      dark: "#D5EBFE"
+      darker: "#c9e5fe",
+      dark: "#d5ebfe"
     },
     input: "#334155",
     border: { DEFAULT: "#e2e8f0", darker: "#cbd5e1" },
-    ring: "#1982FD",
+    ring: "#1982fd",
     accent: {
       DEFAULT: "#f3f4f6",
       foreground: "#1e293b",
@@ -57,10 +57,10 @@ const colors = {
     },
     foreground: { DEFAULT: "#e2e8f0" },
     primary: {
-      DEFAULT: "#1982FD",
+      DEFAULT: "#1982fd",
       foreground: "#e2e8f0",
-      lighter: "#00ACFF",
-      light: "#00CCF1"
+      lighter: "#00acff",
+      light: "#00ccf1"
     },
     secondary: {
       DEFAULT: "#64748b",
@@ -70,7 +70,7 @@ const colors = {
     },
     input: "#cbd5e1",
     border: { DEFAULT: "#334155", darker: "#475569" },
-    ring: "#1982FD",
+    ring: "#1982fd",
     accent: {
       DEFAULT: "#1e293b",
       foreground: "#f3f4f6",
